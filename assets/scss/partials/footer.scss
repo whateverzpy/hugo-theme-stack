@@ -18,10 +18,12 @@ footer.site-footer {
 		margin-bottom: 5px;
 	}
 
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
 	.powerby {
 		color: var(--body-text-color);
+		font-family: "Dancing Script";
 		font-weight: normal;
-		font-size: 1.2rem;
+		font-size: 1.8rem;
 
 		a {
 			color: var(--body-text-color);
