@@ -9,7 +9,7 @@
 		flex-direction: column;
 		background-color: var(--card-background);
 		box-shadow: var(--shadow-l1);
-		border-radius: var(--card-border-radius);
+		border-radius: var(--all-border-radius);
 		overflow: hidden;
 
 		transition: box-shadow 0.3s ease;
@@ -144,7 +144,7 @@
 		color: var(--accent-color-text);
 		background-color: var(--accent-color);
 		padding: 8px 16px;
-		border-radius: var(--tag-border-radius);
+		border-radius: var(--all-border-radius);
 		display: inline-block;
 		font-size: 1.4rem;
 		transition: background-color 0.5s ease;
@@ -158,7 +158,7 @@
 
 /* Compact style article list */
 .article-list--compact {
-	border-radius: var(--card-border-radius);
+	border-radius: var(--all-border-radius);
 	box-shadow: var(--shadow-l1);
 	background-color: var(--card-background);
 	--image-size: 50px;
@@ -221,7 +221,7 @@
 /* Tile style article list */
 .article-list--tile {
 	article {
-		border-radius: var(--card-border-radius);
+		border-radius: var(--all-border-radius);
 		overflow: hidden;
 		position: relative;
 		height: 350px;
@@ -259,7 +259,7 @@
 		}
 
 		.article-details {
-			border-radius: var(--card-border-radius);
+			border-radius: var(--all-border-radius);
 			position: relative;
 			height: 100%;
 			width: 100%;
