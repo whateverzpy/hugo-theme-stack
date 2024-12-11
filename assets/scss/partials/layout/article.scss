@@ -269,15 +269,11 @@
 		padding: var(--card-padding);
 		border-radius: var(--all-border-radius);
 		background-color: var(--blockquote-background-color);
+		font-style: italic;
 
-		.cite {
+		cite {
 			display: block;
 			text-align: right;
-			font-size: 0.75em;
-
-			a {
-				text-decoration: underline;
-			}
 		}
 	}
 
