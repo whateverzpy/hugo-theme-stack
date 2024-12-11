@@ -266,7 +266,8 @@
 		margin: 1.5em 0;
 		border-inline-start: var(--blockquote-border-size) solid
 			var(--card-separator-color);
-		padding: 15px calc(var(--card-padding) - var(--blockquote-border-size));
+		padding: var(--card-padding);
+		border-radius: var(--all-border-radius);
 		background-color: var(--blockquote-background-color);
 
 		.cite {
@@ -414,6 +415,7 @@
 		height: 0;
 		padding-bottom: 56.25%;
 		overflow: hidden;
+		border-radius: var(--all-border-radius);
 
 		& > iframe,
 		& > video {
