@@ -449,11 +449,9 @@
 	}
 
 	/// Make long KaTeX equations scrollable in the x-axis
-	.katex-display > .katex {
+	.katex {
 		overflow-x: auto;
 		overflow-y: hidden;
-		font-family: "STIX", "Cambria Math", "Latin Modern Math", "Asana Math",
-			serif;
 	}
 
 	kbd {
