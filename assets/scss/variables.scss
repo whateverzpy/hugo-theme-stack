@@ -174,3 +174,18 @@ $defaultTagColors: #fff, #fff, #fff, #fff, #fff;
 	--container-padding: 15px;
 	--widget-separation: var(--section-separation);
 }
+
+
+// Hover button style
+
+:root {
+	--button-right: 20px;
+	--button-bottom: 20px;
+	--button-padding: 12px;
+
+	@include respond(md) {
+		--button-right: 30px;
+		--button-bottom: 30px;
+		--button-padding: 15px;
+	}
+}
