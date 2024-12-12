@@ -1,0 +1,30 @@
+<button class="back-to-top" aria-label="返回顶部">
+	{{ partial "helper/icon" "arrow-up" }}
+</button>
+
+<script>
+	document.addEventListener("DOMContentLoaded", () => {
+		const backToTopButton = document.querySelector(".back-to-top");
+		const progressBar = document.querySelector(".reading-progress-bar");
+
+		window.onscroll = () => {
+			if (!progressBar) return;
+
+			if (
+				(progressBar.style.width !== "0%" && window.scrollY > 20) ||
+				window.scrollY > 20
+			) {
+				backToTopButton.style.display = "block";
+			} else {
+				backToTopButton.style.display = "none";
+			}
+		};
+
+		backToTopButton.addEventListener("click", () => {
+			window.scrollTo({
+				top: 0,
+				behavior: "smooth",
+			});
+		});
+	});
+</script>
