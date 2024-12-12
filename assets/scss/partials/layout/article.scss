@@ -391,10 +391,8 @@
 		text-align: left;
 		padding: 4px 8px 4px 10px;
 		border: 1px solid var(--table-border-color);
-	}
-
-	td {
-		vertical-align: top;
+		text-align: center;
+		vertical-align: middle;
 	}
 
 	tr:nth-child(even) {
