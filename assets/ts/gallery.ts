@@ -35,8 +35,9 @@ class StackGallery {
         this.items = [];
 
         const figures = container.querySelectorAll('figure.gallery-image');
+        const figuresArray = Array.from(figures);
 
-        for (const el of figures) {
+        for (const el of figuresArray) {
             const figcaption = el.querySelector('figcaption'),
                 img = el.querySelector('img');
 
@@ -45,7 +46,7 @@ class StackGallery {
                 h: parseInt(img.getAttribute('height')),
                 src: img.src,
                 msrc: img.getAttribute('data-thumb') || img.src,
-                el: el
+                el: el as HTMLElement
             }
 
             if (figcaption) {
@@ -80,7 +81,7 @@ class StackGallery {
 
             const hasLink = img.parentElement.tagName == 'A';
 
-            let el: HTMLElement = img;
+            let el: HTMLElement = img as HTMLElement;
             /// Wrap image with figure tag, with flex-grow and flex-basis values extracted from img's data attributes
             const figure = document.createElement('figure');
             figure.style.setProperty('flex-grow', img.getAttribute('data-flex-grow') || '1');
@@ -104,7 +105,7 @@ class StackGallery {
                 figure.className = 'gallery-image';
 
                 const a = document.createElement('a');
-                a.href = img.src;
+                a.href = (img as HTMLImageElement).src;
                 a.setAttribute('target', '_blank');
                 img.parentNode.insertBefore(a, img);
                 a.appendChild(img);
@@ -115,7 +116,7 @@ class StackGallery {
 
         let currentGallery = [];
 
-        for (const figure of figuresEl) {
+        for (const figure of Array.from(figuresEl)) {
             if (!currentGallery.length) {
                 /// First iteration
                 currentGallery = [figure];
@@ -138,7 +139,7 @@ class StackGallery {
 
     /**
      * Wrap adjacent figure tags with div.gallery
-     * @param figures 
+     * @param figures
      */
     public static wrap(figures: HTMLElement[]) {
         const galleryContainer = document.createElement('div');

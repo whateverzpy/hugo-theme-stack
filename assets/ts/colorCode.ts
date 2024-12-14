@@ -7,31 +7,31 @@ const COLOR_PATTERNS = {
 
 // 初始化函数
 function initColorCode() {
-	document.querySelectorAll("code").forEach((code) => {
-		const text = code.textContent || "";
+  document.querySelectorAll("code").forEach((code) => {
+    const text = code.textContent || "";
 
-		// 检查是否是颜色代码
-		if (isColorCode(text)) {
-			code.classList.add("color-code");
-			code.setAttribute("data-color", text);
+    // 检查是否是颜色代码
+    if (isColorCode(text)) {
+      code.classList.add("color-code");
+      code.setAttribute("data-color", text);
 
-			// 创建一个box并设置颜色
-			const colorBox = document.createElement("span");
-			colorBox.classList.add("color-box");
-			colorBox.style.backgroundColor = text;
-			code.insertBefore(colorBox, code.firstChild);
+      // 创建一个box并设置颜色
+      const colorBox = document.createElement("span");
+      colorBox.classList.add("color-box");
+      colorBox.style.backgroundColor = text;
+      code.insertBefore(colorBox, code.firstChild);
 
-			// 点击复制颜色代码
-			code.addEventListener("click", () => {
-				navigator.clipboard.writeText(text).then(() => {
-					code.classList.add("copied");
-					setTimeout(() => {
-						code.classList.remove("copied");
-					}, 1000);
-				});
-			});
-		}
-	});
+      // 点击复制颜色代码
+      code.addEventListener("click", () => {
+        navigator.clipboard.writeText(text).then(() => {
+          code.classList.add("copied");
+          setTimeout(() => {
+            code.classList.remove("copied");
+          }, 1000);
+        });
+      });
+    }
+  });
 }
 
 // 判断是否是支持的颜色格式
