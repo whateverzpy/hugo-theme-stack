@@ -275,6 +275,32 @@
 			display: block;
 			text-align: right;
 		}
+
+		&.alert {
+			$alert-types: (
+				"note": var(--alert-note-color),
+				"tip": var(--alert-tip-color),
+				"important": var(--alert-important-color),
+				"warning": var(--alert-warning-color),
+				"caution": var(--alert-caution-color),
+			);
+
+			@each $type, $color in $alert-types {
+				&.alert-#{$type} {
+					.alert-title {
+						color: $color;
+					}
+					border-inline-start-color: $color;
+				}
+			}
+			.alert-title {
+				font-weight: bold;
+				display: flex;
+				align-items: center;
+				gap: 10px;
+				margin: 0;
+			}
+		}
 	}
 
 	hr {
@@ -292,6 +318,17 @@
 		padding: 2px 4px;
 		border-radius: var(--all-border-radius);
 		font-family: var(--code-font-family);
+
+		&.color-code {
+			.color-box {
+				display: inline-flex;
+				align-items: center;
+				width: 0.5em;
+				height: 0.5em;
+				border-radius: 50%;
+				margin-right: 5px;
+			}
+		}
 	}
 
 	a,

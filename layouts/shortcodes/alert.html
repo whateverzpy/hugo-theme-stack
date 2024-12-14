@@ -1,0 +1,7 @@
+<blockquote class="alert alert-{{ .Get 0 }}">
+  <p class="alert-title">
+      {{ partial "helper/icon" (.Get 0) }}
+      <span>{{ .Get 0 | upper }}</span>
+  </p>
+  {{ .Inner | markdownify }}
+</blockquote>

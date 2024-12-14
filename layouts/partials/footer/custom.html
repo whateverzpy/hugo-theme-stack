@@ -1,0 +1,2 @@
+{{ $colorCode := resources.Get "ts/colorCode.ts" | js.Build }}
+<script src="{{ $colorCode.RelPermalink }}" defer></script>
