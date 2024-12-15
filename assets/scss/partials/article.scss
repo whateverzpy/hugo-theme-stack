@@ -163,6 +163,11 @@
 		--image-size: 60px;
 	}
 
+	mark {
+		background-color: var(--accent-color);
+		color: var(--body-background);
+	}
+
 	article {
 		& > a {
 			display: flex;
