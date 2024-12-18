@@ -360,6 +360,7 @@
 		line-height: 1.428571429;
 		word-break: break-all;
 		padding: var(--card-padding);
+		border-radius: var(--all-border-radius);
 		//  keep Codeblocks LTR
 		[dir="rtl"] & {
 			direction: ltr;
@@ -369,6 +370,12 @@
 			border: none;
 			background: none;
 			padding: 0;
+		}
+
+		&.mermaid {
+			background-color: transparent;
+			display: flex;
+			justify-content: center;
 		}
 	}
 

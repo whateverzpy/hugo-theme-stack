@@ -108,18 +108,37 @@
 			box-shadow: var(--shadow-l1);
 		}
 
-		.emoji {
-			position: absolute;
+		.emoji-wrapper {
+			display: inline-flex;
+			gap: 5px;
+			align-items: center;
+			position: relative;
 			width: var(--emoji-size);
 			height: var(--emoji-size);
-			line-height: var(--emoji-size);
-			border-radius: 100%;
-			bottom: 0;
-			right: 0;
-			text-align: center;
-			font-size: var(--emoji-font-size);
+			bottom: 30%;
+			left: 70%;
 			background-color: var(--card-background);
-			box-shadow: var(--shadow-l2);
+			padding: 5px;
+			border-radius: calc(var(--emoji-size) / 2);
+
+			.emoji {
+				cursor: pointer;
+				font-size: var(--emoji-font-size);
+			}
+
+			.emoji-status {
+				opacity: 0;
+				color: var(--accent-color);
+			}
+
+			&:hover {
+				.emoji-status {
+					opacity: 1;
+					display: inline-block;
+				}
+				width: auto;
+				border: 2px solid var(--accent-color);
+			}
 		}
 	}
 

@@ -25,7 +25,10 @@
                 {{ end }}
                 </a>
                 {{ with $.Site.Params.sidebar.emoji }}
-                    <span class="emoji">{{ . }}</span>
+                    <div class="emoji-wrapper">
+                        <span class="emoji">{{ . }}</span>
+                        <span class="emoji-status">熬夜中</span>
+                    </div>
                 {{ end }}
             </figure>
             {{ end }}
