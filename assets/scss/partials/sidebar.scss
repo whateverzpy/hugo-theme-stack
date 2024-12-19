@@ -120,9 +120,9 @@
 			background-color: var(--card-background);
 			padding: 5px;
 			border-radius: calc(var(--emoji-size) / 2);
+			cursor: pointer;
 
 			.emoji {
-				cursor: pointer;
 				font-size: var(--emoji-font-size);
 			}
 
