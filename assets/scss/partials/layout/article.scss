@@ -429,14 +429,12 @@
 		border-collapse: collapse;
 		border-spacing: 0;
 		margin-bottom: 1.5em;
-		font-size: 0.96em;
 	}
 
 	th,
 	td {
-		text-align: left;
-		padding: 4px 8px 4px 10px;
-		border: 1px solid var(--table-border-color);
+		padding: 6px;
+		border: solid 2px var(--table-border-color);
 		text-align: center;
 		vertical-align: middle;
 	}
@@ -519,6 +517,11 @@
 		}
 	}
 
+	.katex {
+		padding: 10px 0;
+		overflow: auto;
+	}
+
 	/// Negative margins
 	blockquote,
 	figure,
@@ -529,12 +532,6 @@
 	.table-wrapper,
 	.s_video_simple {
 		width: auto;
-	}
-
-	/// Make long KaTeX equations scrollable in the x-axis
-	.katex {
-		overflow-x: auto;
-		overflow-y: hidden;
 	}
 
 	kbd {
