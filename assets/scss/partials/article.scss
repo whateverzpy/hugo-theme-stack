@@ -286,3 +286,17 @@
 		}
 	}
 }
+
+.ai-generated-note {
+	display: flex;
+	align-items: center;
+	margin-top: 2rem;
+	font-size: 1.3rem;
+	color: var(--body-text-color);
+
+	svg {
+		height: 1em;
+		width: 1em;
+		vertical-align: middle;
+	}
+}
