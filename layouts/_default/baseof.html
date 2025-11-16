@@ -30,3 +30,33 @@
     mermaid.initialize({ startOnLoad: true });
   </script>
 {{ end }}
+
+{{ if .Store.Get "hasPlantUML" }}
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const blocks = document.querySelectorAll('pre.plantuml');
+      if (!blocks.length) return;
+
+      const server = '{{ default "https://kroki.io/plantuml" .Site.Params.plantuml.server }}';
+      for (const pre of blocks) {
+        const code = pre.textContent.trim();
+        try {
+          const res = await fetch(`${server}/svg`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'text/plain' },
+            body: code
+          });
+          if (!res.ok) throw new Error(res.statusText);
+          const svg = await res.text();
+          const wrapper = document.createElement('pre');
+          wrapper.className = 'plantuml';
+          wrapper.innerHTML = svg;
+          pre.replaceWith(wrapper);
+        } catch (err) {
+          console.error('PlantUML render failed:', err);
+          // 失败则保留原代码块以便阅读
+        }
+      }
+    });
+  </script>
+{{ end }}
