@@ -39,11 +39,22 @@ class StackGallery {
 
         for (const el of figuresArray) {
             const figcaption = el.querySelector('figcaption'),
-                img = el.querySelector('img');
+                img = el.querySelector('img') as HTMLImageElement;
+
+            // 优先使用真实尺寸，其次属性，再次当前布局尺寸，最后兜底
+            const attrW = parseInt(img.getAttribute('width') || '0');
+            const attrH = parseInt(img.getAttribute('height') || '0');
+            const natW = img.naturalWidth || 0;
+            const natH = img.naturalHeight || 0;
+            const layoutW = img.clientWidth || (img as any).width || 0;
+            const layoutH = img.clientHeight || (img as any).height || 0;
+
+            const w = natW || attrW || layoutW || 800;
+            const h = natH || attrH || layoutH || 600;
 
             let aux: PhotoSwipeItem = {
-                w: parseInt(img.getAttribute('width')),
-                h: parseInt(img.getAttribute('height')),
+                w,
+                h,
                 src: img.src,
                 msrc: img.getAttribute('data-thumb') || img.src,
                 el: el as HTMLElement
@@ -166,6 +177,19 @@ class StackGallery {
                     rect = thumbnail.getBoundingClientRect();
 
                 return { x: rect.left, y: rect.top + pageYScroll, w: rect.width };
+            }
+        });
+
+        // 打开时二次校正
+        ps.listen('gettingData', (i: number, item: any) => {
+            if (!item.w || !item.h || (item.w === 500 && item.h === 500)) {
+                const img = item.el.getElementsByTagName('img')[0] as HTMLImageElement;
+                const natW = img.naturalWidth || img.clientWidth || img.width;
+                const natH = img.naturalHeight || img.clientHeight || img.height;
+                if (natW && natH) {
+                    item.w = natW;
+                    item.h = natH;
+                }
             }
         });
 

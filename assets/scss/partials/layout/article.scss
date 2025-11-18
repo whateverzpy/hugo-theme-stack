@@ -593,3 +593,9 @@
   box-shadow: var(--shadow-l4);
   transform: translateY(-2px);
 }
+
+.pswp {
+    .pswp__caption__center {
+        text-align: center;
+    }
+}
