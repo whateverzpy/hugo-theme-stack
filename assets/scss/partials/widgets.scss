@@ -13,8 +13,8 @@
 }
 
 /* Tag cloud widget */
-.tagCloud {
-	.tagCloud-tags {
+.tagCloud, .categories {
+	.tagCloud-tags, .categoriesCloud-tags {
 		display: flex;
 		flex-wrap: wrap;
 		gap: 10px;
