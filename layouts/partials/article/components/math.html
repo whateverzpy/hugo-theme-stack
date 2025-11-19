@@ -1,14 +1,61 @@
 {{- partial "helper/external" (dict "Context" . "Namespace" "KaTeX") -}}
 <script>
     window.addEventListener("DOMContentLoaded", () => {
-	const mainArticleElement = document.querySelector(".main-article");
-        renderMathInElement(mainArticleElement, {
+        const renderOptions = {
             delimiters: [
                 { left: "$$", right: "$$", display: true },
                 { left: "$", right: "$", display: false },
                 { left: "\\(", right: "\\)", display: false },
                 { left: "\\[", right: "\\]", display: true }
             ],
-            ignoredClasses: ["gist"]
-        });})
+            ignoredClasses: ["gist"],
+            throwOnError: false
+        };
+
+        /**
+         * 修复目录(TOC)中的数学公式渲染问题
+         * Hugo 生成的目录可能会丢失部分 LaTeX 代码（因为被视为 Markdown 格式处理了），
+         * 这里通过 JavaScript 从正文对应的标题中获取原始 HTML 内容并替换回目录项，
+         * 从而恢复数学公式的 delimiters，让 KaTeX 能够正常渲染。
+         */
+        const toc = document.querySelector(".widget--toc");
+        if (toc) {
+            toc.querySelectorAll("a").forEach(link => {
+                const href = link.getAttribute("href");
+                if (!href || !href.startsWith("#")) return;
+                
+                try {
+                    // 解码锚点，例如 "%E6%95%B0%E5%AD%A6" -> "数学"
+                    const id = decodeURIComponent(href.substring(1));
+                    // 根据 ID 获取正文中的标题元素
+                    const heading = document.getElementById(id);
+                    if (heading) {
+                        // 克隆标题节点，避免修改原标题
+                        const clone = heading.cloneNode(true);
+                        // 移除标题中的锚点链接（如果有），避免在目录中重复出现
+                        const anchor = clone.querySelector(".header-anchor");
+                        if (anchor) anchor.remove();
+                        
+                        // 将处理后的标题 HTML 内容赋值给目录链接
+                        link.innerHTML = clone.innerHTML;
+                    }
+                } catch (e) {
+                    console.debug("TOC sync error:", e);
+                }
+            });
+        }
+
+        // 同时渲染文章主体(.main-article)和目录(.widget--toc)
+        const elementsToRender = [
+            ".main-article",
+            ".widget--toc"
+        ];
+
+        elementsToRender.forEach(selector => {
+            const elements = document.querySelectorAll(selector);
+            elements.forEach(element => {
+                renderMathInElement(element, renderOptions);
+            });
+        });
+    })
 </script>
