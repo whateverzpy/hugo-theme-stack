@@ -1,7 +1,60 @@
 $defaultTagBackgrounds: #8ea885, #df7988, #0177b8, #ffb900, #6b69d6;
 $defaultTagColors: #fff, #fff, #fff, #fff, #fff;
 
-@import url('https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&family=Noto+Serif+SC:wght@200..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
+@font-face {
+    font-family: "Source Serif 4";
+    src: url('/fonts/Source_Serif_4/SourceSerif4-VariableFont_opsz,wght.ttf') format('truetype');
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Source Serif 4";
+    src: url('/fonts/Source_Serif_4/SourceSerif4-Italic-VariableFont_opsz,wght.ttf') format('truetype');
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Noto Serif SC";
+    src: url('/fonts/Noto_Serif_SC/NotoSerifSC-VariableFont_wght.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Cascadia Code";
+    src: url('/fonts/Cascadia_Code/CascadiaCode-VariableFont_wght.ttf') format('truetype');
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Cascadia Code";
+    src: url('/fonts/Cascadia_Code/CascadiaCode-Italic-VariableFont_wght.ttf') format('truetype');
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "LXGW Wenkai";
+    src: url('/fonts/LXGW_Wenkai/LXGWWenKai-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "LXGW Wenkai";
+    src: url('/fonts/LXGW_Wenkai/LXGWWenKai-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "LXGW Wenkai";
+    src: url('/fonts/LXGW_Wenkai/LXGWWenKai-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-display: swap;
+}
 
 /*
 *   Global style
@@ -51,7 +104,7 @@ $defaultTagColors: #fff, #fff, #fff, #fff, #fff;
 	--base-font-family: var(--sys-font-family), var(--zh-font-family), sans-serif;
 
 	--code-font-family: "Cascadia Code", Menlo, Monaco, Consolas, "Courier New",
-		"STKaiti", "KaiTi", "Kaiti SC", "楷体", var(--zh-font-family), monospace;
+		"LXGW Wenkai" ,"STKaiti", "KaiTi", "Kaiti SC", "楷体", var(--zh-font-family), monospace;
 }
 
 /*
