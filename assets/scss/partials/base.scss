@@ -8,12 +8,15 @@ html {
 }
 
 body {
-	background: var(--body-background);
-	margin: 0;
-	font-family: var(--base-font-family);
-	font-size: 1.6rem;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+    background: var(--body-background);
+    margin: 0;
+    font-family: var(--base-font-family);
+    font-size: 1.6rem;
+    text-autospace: ideograph-alpha ideograph-numeric punctuation insert;
+    text-spacing-trim: trim-start allow-end;
+    -ms-text-autospace: ideograph-alpha;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* scrollbar styles for Firefox */

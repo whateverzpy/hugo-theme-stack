@@ -29,12 +29,13 @@
 		gap: 8px;
 	}
 
-	.section-image {
-		img {
-			width: 60px;
-			height: 60px;
-		}
-	}
+    .section-image {
+        img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+        }
+    }
 
 	.section-count {
 		color: var(--card-text-color-tertiary);
