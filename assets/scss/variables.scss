@@ -37,22 +37,8 @@ $defaultTagColors: #fff, #fff, #fff, #fff, #fff;
 
 @font-face {
     font-family: "LXGW Wenkai";
-    src: url('/fonts/LXGW_Wenkai/LXGWWenKai-Light.ttf') format('truetype');
-    font-weight: 300;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "LXGW Wenkai";
     src: url('/fonts/LXGW_Wenkai/LXGWWenKai-Regular.ttf') format('truetype');
     font-weight: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "LXGW Wenkai";
-    src: url('/fonts/LXGW_Wenkai/LXGWWenKai-Medium.ttf') format('truetype');
-    font-weight: 500;
     font-display: swap;
 }
 
