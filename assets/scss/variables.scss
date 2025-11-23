@@ -81,15 +81,12 @@ $defaultTagColors: #fff, #fff, #fff, #fff, #fff;
 *   Global font family
 */
 :root {
-	--sys-font-family: "Source Serif 4", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-		"Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-		"Segoe UI Symbol";
-	--zh-font-family: "Noto Serif SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
-		"WenQuanYi Micro Hei", "Source Han Sans CN", sans-serif;
+	--sys-font-family: "Source Serif 4", Arial;
+	--zh-font-family: "Noto Serif SC", serif;
 
 	--base-font-family: var(--sys-font-family), var(--zh-font-family), sans-serif;
 
-	--code-font-family: "Cascadia Code", Menlo, Monaco, Consolas, "Courier New",
+	--code-font-family: "Cascadia Code", Menlo, Monaco, Consolas,
 		"LXGW Wenkai" ,"STKaiti", "KaiTi", "Kaiti SC", "楷体", var(--zh-font-family), monospace;
 }
 

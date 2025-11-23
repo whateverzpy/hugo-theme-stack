@@ -1,33 +1,37 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+@font-face {
+  font-family: "Dancing Script";
+  src: url("/fonts/Dancing_Script/DancingScript-VariableFont_wght.ttf") format("truetype");
+  font-display: swap;
+}
 
 footer.site-footer {
-	padding: 20px 0 var(--section-separation) 0;
-	font-size: 1.4rem;
-	line-height: 1.75;
+  padding: 20px 0 var(--section-separation) 0;
+  font-size: 1.4rem;
+  line-height: 1.75;
 
-	&:before {
-		content: "";
-		display: block;
-		height: 3px;
-		width: 50px;
-		background: var(--body-text-color);
-		margin-bottom: 20px;
-	}
+  &:before {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 50px;
+    background: var(--body-text-color);
+    margin-bottom: 20px;
+  }
 
-	.copyright {
-		color: var(--accent-color);
-		font-weight: bold;
-		margin-bottom: 5px;
-	}
+  .copyright {
+    color: var(--accent-color);
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
 
-	.powerby {
-		color: var(--body-text-color);
-		font-family: "Dancing Script";
-		font-weight: normal;
-		font-size: 1.8rem;
+  .powerby {
+    color: var(--body-text-color);
+    font-family: "Dancing Script";
+    font-weight: normal;
+    font-size: 1.8rem;
 
-		a {
-			color: var(--body-text-color);
-		}
-	}
+    a {
+      color: var(--body-text-color);
+    }
+  }
 }
