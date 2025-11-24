@@ -271,15 +271,17 @@
     padding: var(--card-padding);
     border-radius: var(--all-border-radius);
     background-color: var(--blockquote-background-color);
-    font-style: italic;
+    font-family: "Recursive", "LXGW Wenkai";
+    font-variation-settings: "CASL" 1, "CRSV" 0.5, "MONO" 0, "slnt" -15;
 
     cite {
       display: block;
       text-align: right;
+      font-style: normal;
     }
 
     &.alert {
-      font-style: normal;
+      font-variation-settings: "CASL" 1, "CRSV" 0.5, "MONO" 0, "slnt" 0;
       $alert-types: (
         "note": var(--alert-note-color),
         "tip": var(--alert-tip-color),
@@ -339,7 +341,7 @@
     width: 0.75em;
     height: 0.75em;
     border-radius: 50%;
-    vertical-align: -0.1em;
+    vertical-align: middle;
     margin-right: 0.35em;
   }
 
@@ -567,6 +569,11 @@
     padding: 2px 4px;
     border-radius: 4px;
     display: inline-block;
+  }
+
+  em {
+    font-style: normal;
+    font-variation-settings: "CASL" 0.3, "CRSV" 0.5, "MONO" 0, "slnt" -15
   }
 }
 

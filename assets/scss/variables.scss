@@ -2,193 +2,196 @@ $defaultTagBackgrounds: #8ea885, #df7988, #0177b8, #ffb900, #6b69d6;
 $defaultTagColors: #fff, #fff, #fff, #fff, #fff;
 
 @font-face {
-    font-family: "Source Serif 4";
-    src: url('/fonts/Source_Serif_4/SourceSerif4-VariableFont_opsz,wght.ttf') format('truetype');
-    font-style: normal;
-    font-display: swap;
+  font-family: "Recursive";
+  src: url("/fonts/Recursive-VariableFont_CASL,CRSV,MONO,slnt,wght.woff2")
+    format("woff2-variations");
+  font-display: swap;
+  font-weight: 300 1000;
+  font-style: oblique 0deg -15deg;
 }
 
 @font-face {
-    font-family: "Source Serif 4";
-    src: url('/fonts/Source_Serif_4/SourceSerif4-Italic-VariableFont_opsz,wght.ttf') format('truetype');
-    font-style: italic;
-    font-display: swap;
+  font-family: "LXGW Neo Zhisong";
+  src: url("/fonts/LXGWNeoZhiSongPlus.woff2") format("woff2");
+  font-display: swap;
 }
 
 @font-face {
-    font-family: "Noto Serif SC";
-    src: url('/fonts/Noto_Serif_SC/NotoSerifSC-VariableFont_wght.ttf') format('truetype');
-    font-display: swap;
+  font-family: "Cascadia Code";
+  src: url("/fonts/CascadiaCode-VariableFont_wght.woff2")
+    format("woff2-variations");
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: "Cascadia Code";
-    src: url('/fonts/Cascadia_Code/CascadiaCode-VariableFont_wght.ttf') format('truetype');
-    font-style: normal;
-    font-display: swap;
+  font-family: "Cascadia Code";
+  src: url("/fonts/CascadiaCode-Italic-VariableFont_wght.woff2")
+    format("woff2-variations");
+  font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: "Cascadia Code";
-    src: url('/fonts/Cascadia_Code/CascadiaCode-Italic-VariableFont_wght.ttf') format('truetype');
-    font-style: italic;
-    font-display: swap;
+  font-family: "LXGW Wenkai";
+  src: url("/fonts/LXGWWenKai-Medium.woff2") format("woff2");
+  font-display: swap;
 }
 
 @font-face {
-    font-family: "LXGW Wenkai";
-    src: url('/fonts/LXGW_Wenkai/LXGWWenKai-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-display: swap;
+  font-family: "Dancing Script";
+  src: url("/fonts/DancingScript-VariableFont_wght.woff2")
+    format("woff2-variations");
+  font-display: swap;
 }
 
 /*
 *   Global style
 */
 :root {
-	--main-top-padding: 35px;
+  --main-top-padding: 35px;
 
-	@include respond(xl) {
-		--main-top-padding: 50px;
-	}
+  @include respond(xl) {
+    --main-top-padding: 50px;
+  }
 
-	--body-background: #f5f5fa;
+  --body-background: #f5f5fa;
 
-	--accent-color: #22587b;
-	--accent-color-darker: #0c3b5a;
-	--accent-color-text: #fff;
-	--body-text-color: #535353;
+  --accent-color: #22587b;
+  --accent-color-darker: #0c3b5a;
+  --accent-color-text: #fff;
+  --body-text-color: #535353;
 
-	--all-border-radius: 10px;
+  --all-border-radius: 10px;
 
-	--section-separation: 40px;
+  --section-separation: 40px;
 
-	--scrollbar-thumb: hsl(0, 0%, 85%);
-	--scrollbar-track: var(--body-background);
+  --scrollbar-thumb: hsl(0, 0%, 85%);
+  --scrollbar-track: var(--body-background);
 
-	&[data-scheme="dark"] {
-		--body-background: #151c25;
-		--accent-color: #72c7ff;
-		--accent-color-darker: #96d5ff;
-		--accent-color-text: #000;
-		--body-text-color: rgba(255, 255, 255, 0.7);
-		--scrollbar-thumb: hsl(0, 0%, 40%);
-		--scrollbar-track: var(--body-background);
-	}
+  &[data-scheme="dark"] {
+    --body-background: #151c25;
+    --accent-color: #72c7ff;
+    --accent-color-darker: #96d5ff;
+    --accent-color-text: #000;
+    --body-text-color: rgba(255, 255, 255, 0.7);
+    --scrollbar-thumb: hsl(0, 0%, 40%);
+    --scrollbar-track: var(--body-background);
+  }
 }
 
 /**
 *   Global font family
 */
 :root {
-	--sys-font-family: "Source Serif 4", Arial;
-	--zh-font-family: "Noto Serif SC", serif;
+  --sys-font-family: "Recursive";
+  --zh-font-family: "LXGW Neo Zhisong", serif;
 
-	--base-font-family: var(--sys-font-family), var(--zh-font-family), sans-serif;
+  --base-font-family: var(--sys-font-family), var(--zh-font-family), sans-serif;
 
-	--code-font-family: "Cascadia Code", Menlo, Monaco, Consolas,
-		"LXGW Wenkai" ,"STKaiti", "KaiTi", "Kaiti SC", "楷体", var(--zh-font-family), monospace;
+  --code-font-family: "Cascadia Code", Menlo, Monaco, Consolas, "LXGW Wenkai",
+    "STKaiti", "KaiTi", "Kaiti SC", "楷体", var(--zh-font-family), monospace;
 }
 
 /*
 *   Card style
 */
 :root {
-	--card-background: #fff;
-	--card-background-selected: #eaeaea;
+  --card-background: #fff;
+  --card-background-selected: #eaeaea;
 
-	--card-text-color-main: #000;
-	--card-text-color-secondary: #747474;
-	--card-text-color-tertiary: #767676;
-	--card-separator-color: rgba(218, 218, 218, 0.5);
+  --card-text-color-main: #000;
+  --card-text-color-secondary: #747474;
+  --card-text-color-tertiary: #767676;
+  --card-separator-color: rgba(218, 218, 218, 0.5);
 
-	--all-border-radius: 10px;
+  --all-border-radius: 10px;
 
-	--card-padding: 20px;
+  --card-padding: 20px;
 
-	@include respond(md) {
-		--card-padding: 25px;
-	}
+  @include respond(md) {
+    --card-padding: 25px;
+  }
 
-	@include respond(xl) {
-		--card-padding: 30px;
-	}
+  @include respond(xl) {
+    --card-padding: 30px;
+  }
 
-	--small-card-padding: 25px 20px;
+  --small-card-padding: 25px 20px;
 
-	@include respond(md) {
-		--small-card-padding: 25px;
-	}
+  @include respond(md) {
+    --small-card-padding: 25px;
+  }
 
-	&[data-scheme="dark"] {
-		--card-background: #0d1116;
-		--card-background-selected: #585858;
-		--card-text-color-main: rgba(255, 255, 255, 0.9);
-		--card-text-color-secondary: rgba(255, 255, 255, 0.7);
-		--card-text-color-tertiary: rgba(255, 255, 255, 0.5);
-		--card-separator-color: rgba(255, 255, 255, 0.12);
-	}
+  &[data-scheme="dark"] {
+    --card-background: #0d1116;
+    --card-background-selected: #585858;
+    --card-text-color-main: rgba(255, 255, 255, 0.9);
+    --card-text-color-secondary: rgba(255, 255, 255, 0.7);
+    --card-text-color-tertiary: rgba(255, 255, 255, 0.5);
+    --card-separator-color: rgba(255, 255, 255, 0.12);
+  }
 }
 
 /**
 *   Article content font settings
 */
 :root {
-	--article-font-family: var(--base-font-family);
-	--article-font-size: 1.6rem;
+  --article-font-family: var(--base-font-family);
+  --article-font-size: 1.6rem;
 
-	@include respond(md) {
-		--article-font-size: 1.7rem;
-	}
+  @include respond(md) {
+    --article-font-size: 1.7rem;
+  }
 
-	--article-line-height: 1.85;
+  --article-line-height: 1.85;
 }
 
 /*
 *   Article content style
 */
 :root {
-	--blockquote-border-size: 10px;
-	--blockquote-background-color: rgb(248 248 248);
+  --blockquote-border-size: 10px;
+  --blockquote-background-color: rgb(248 248 248);
 
-	--heading-border-size: 4px;
+  --heading-border-size: 4px;
 
-	--link-background-color: 189, 195, 199;
-	--link-background-opacity: 0.5;
-	--link-background-opacity-hover: 0.7;
+  --link-background-color: 189, 195, 199;
+  --link-background-opacity: 0.5;
+  --link-background-opacity-hover: 0.7;
 
-	--pre-background-color: #f5f5f5;
-	--pre-text-color: #333;
+  --pre-background-color: #f5f5f5;
+  --pre-text-color: #333;
 
-	--code-background-color: #f5f5f5;
-	--code-text-color: #4d4d4d;
+  --code-background-color: #f5f5f5;
+  --code-text-color: #4d4d4d;
 
-	--table-border-color: #dadada;
-	--tr-even-background-color: #efefee;
+  --table-border-color: #dadada;
+  --tr-even-background-color: #efefee;
 
-	--kbd-border-color: #dadada;
+  --kbd-border-color: #dadada;
 
-	--alert-note-color: #0a69da;
-	--alert-tip-color: #1b7f36;
-	--alert-important-color: #8250df;
-	--alert-warning-color: #9b6700;
-	--alert-caution-color: #cf212e;
+  --alert-note-color: #0a69da;
+  --alert-tip-color: #1b7f36;
+  --alert-important-color: #8250df;
+  --alert-warning-color: #9b6700;
+  --alert-caution-color: #cf212e;
 
-	&[data-scheme="dark"] {
-		--code-background-color: #151b23;
-		--code-text-color: rgba(255, 255, 255, 0.9);
+  &[data-scheme="dark"] {
+    --code-background-color: #151b23;
+    --code-text-color: rgba(255, 255, 255, 0.9);
 
-		--table-border-color: #717171;
-		--tr-even-background-color: #1c2127;
+    --table-border-color: #717171;
+    --tr-even-background-color: #1c2127;
 
-		--blockquote-background-color: #151b23;
+    --blockquote-background-color: #151b23;
 
-		--alert-note-color: #1f6feb;
-		--alert-tip-color: #238636;
-		--alert-important-color: #8957e5;
-		--alert-warning-color: #9e6a02;
-		--alert-caution-color: #da3633;
-	}
+    --alert-note-color: #1f6feb;
+    --alert-tip-color: #238636;
+    --alert-important-color: #8957e5;
+    --alert-warning-color: #9e6a02;
+    --alert-caution-color: #da3633;
+  }
 }
 
 /*
@@ -196,45 +199,45 @@ $defaultTagColors: #fff, #fff, #fff, #fff, #fff;
 *   Thanks to https://www.figma.com/community/plugin/744987207861965946/Shadow-picker
 */
 :root {
-	--shadow-l1: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 0px 2px rgba(0, 0, 0, 0.06),
-		0px 0px 1px rgba(0, 0, 0, 0.04);
-	--shadow-l2: 0px 10px 20px rgba(0, 0, 0, 0.04),
-		0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
-	--shadow-l3: 0px 10px 20px rgba(0, 0, 0, 0.04),
-		0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
-	--shadow-l4: 0px 24px 32px rgba(0, 0, 0, 0.04),
-		0px 16px 24px rgba(0, 0, 0, 0.04), 0px 4px 8px rgba(0, 0, 0, 0.04),
-		0px 0px 1px rgba(0, 0, 0, 0.04);
+  --shadow-l1: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 0px 2px rgba(0, 0, 0, 0.06),
+    0px 0px 1px rgba(0, 0, 0, 0.04);
+  --shadow-l2: 0px 10px 20px rgba(0, 0, 0, 0.04),
+    0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
+  --shadow-l3: 0px 10px 20px rgba(0, 0, 0, 0.04),
+    0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
+  --shadow-l4: 0px 24px 32px rgba(0, 0, 0, 0.04),
+    0px 16px 24px rgba(0, 0, 0, 0.04), 0px 4px 8px rgba(0, 0, 0, 0.04),
+    0px 0px 1px rgba(0, 0, 0, 0.04);
 }
 
 [data-scheme="light"] {
-	--pre-text-color: #333;
-	--pre-background-color: #f5f5f5;
-	@import "partials/highlight/light.scss";
+  --pre-text-color: #333;
+  --pre-background-color: #f5f5f5;
+  @import "partials/highlight/light.scss";
 }
 
 [data-scheme="dark"] {
-	--pre-text-color: #f8f8f2;
-	--pre-background-color: #151b23;
-	@import "partials/highlight/dark.scss";
+  --pre-text-color: #f8f8f2;
+  --pre-background-color: #151b23;
+  @import "partials/highlight/dark.scss";
 }
 
 :root {
-	--menu-icon-separation: 40px;
-	--container-padding: 15px;
-	--widget-separation: var(--section-separation);
+  --menu-icon-separation: 40px;
+  --container-padding: 15px;
+  --widget-separation: var(--section-separation);
 }
 
 // Hover button style
 
 :root {
-	--button-right: 20px;
-	--button-bottom: 20px;
-	--button-padding: 12px;
+  --button-right: 20px;
+  --button-bottom: 20px;
+  --button-padding: 12px;
 
-	@include respond(md) {
-		--button-right: 30px;
-		--button-bottom: 30px;
-		--button-padding: 15px;
-	}
+  @include respond(md) {
+    --button-right: 30px;
+    --button-bottom: 30px;
+    --button-padding: 15px;
+  }
 }
