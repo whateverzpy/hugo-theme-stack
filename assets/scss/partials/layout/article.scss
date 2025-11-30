@@ -281,7 +281,7 @@
     }
 
     &.alert {
-      font-variation-settings: "CASL" 1, "CRSV" 0.5, "MONO" 0, "slnt" 0;
+      font-variation-settings: "CASL" 1, "CRSV" 0.5, "MONO" 0;
       $alert-types: (
         "note": var(--alert-note-color),
         "tip": var(--alert-tip-color),
@@ -569,11 +569,6 @@
     padding: 2px 4px;
     border-radius: 4px;
     display: inline-block;
-  }
-
-  em {
-    font-style: normal;
-    font-variation-settings: "CASL" 0.3, "CRSV" 0.5, "MONO" 0, "slnt" -15
   }
 }
 
