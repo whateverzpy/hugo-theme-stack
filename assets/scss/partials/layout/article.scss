@@ -12,6 +12,7 @@
     border-radius: var(--all-border-radius);
     box-shadow: var(--shadow-l1);
     overflow: hidden;
+    overflow-wrap: break-word;
 
     .article-header {
       .article-image {
@@ -328,7 +329,7 @@
     display: inline; // 作为真正的行内元素嵌入正文
     line-height: inherit; // 继承正文行高，视觉一致
     overflow-wrap: anywhere; // 长连续字符串也能在任意位置断行
-    word-break: break-word;
+    word-break: break-all;
 
     // 让背景/圆角在每一行都正确“断开并复制”，而不是形成一整块
     -webkit-box-decoration-break: clone;
@@ -345,8 +346,7 @@
     margin-right: 0.35em;
   }
 
-  a,
-  code {
+  a {
     word-break: break-word;
   }
 
